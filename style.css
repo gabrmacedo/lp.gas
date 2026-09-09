@@ -148,31 +148,50 @@ img {
 /* ===== HEADER ===== */
 .header {
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   z-index: 999;
   background-color: var(--color-paper);
   border-bottom: 1px solid var(--color-mist);
   font-weight: var(--font-weight-medium);
+  width: 100%;
+  height: 90px; /* Travamos a altura do cabeçalho para ele não esticar */
 }
 
 .header-container {
   max-width: var(--page-max-width);
   margin: 0 auto;
-  padding: var(--spacing-16);
+  padding: 0 var(--spacing-16); /* Removemos o padding vertical para não esticar */
+  height: 100%; /* O contêiner puxa a altura de 90px do header */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-32);
 }
 
 .logo {
-  font-size: var(--text-heading-sm);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--tracking-heading-sm);
-  color: var(--color-ink);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  display: block;
+  height: 100%;
 }
+
+/* Controla o tamanho do SVG sem deixar ele estufar o cabeçalho */
+.logo img {
+  height: 200px;        /* Mantém o desenho grande e visível */
+  width: auto;
+  margin-top: -50px;      /* Centraliza verticalmente o desenho interno */
+  display: block;
+  object-fit: contain;
+}
+
+.header-nav {
+  display: none; /* Mantém oculto por padrão (mobile) e ativa no media query abaixo */
+  gap: var(--spacing-24);
+  justify-content: center; /* Centraliza os links perfeitamente no meio da tela */
+  align-items: center;
+  border: none;            /* Garante que não há bordas no menu */
+}
+
 
 .header-nav {
   display: none;
@@ -183,6 +202,7 @@ img {
   .header-nav {
     display: flex;
     flex: 1;
+    align-items: center;
   }
 }
 
@@ -212,13 +232,7 @@ img {
 }
 
 .btn-header {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .btn-header {
-    display: inline-flex;
-  }
+  justify-self: end;
 }
 
 .menu-toggle {
@@ -296,51 +310,77 @@ img {
   width: 100%;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO SECTION (CUSTOMIZADA) ===== */
 .hero {
   background-color: var(--color-paper);
-  padding: var(--spacing-80) var(--spacing-16);
+  padding: var(--spacing-80) 0;
+  overflow: hidden;
 }
 
 .hero-container {
   max-width: var(--page-max-width);
   margin: 0 auto;
+  padding: 0 var(--spacing-16);
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-72);
+  gap: var(--spacing-48);
   align-items: center;
 }
 
-@media (min-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1fr 1fr;
-  }
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
-.hero-label {
+/* Estilo do Rótulo Laranja em formato de Pílula */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #F4511E; /* Laranja da imagem */
+  color: #ffffff;
   font-size: var(--text-caption);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-ember);
   font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+  padding: 8px 20px;
+  border-radius: 20px; /* Deixa em formato de pílula arredondada */
   margin-bottom: var(--spacing-24);
 }
 
+/* Ícone do Caminhãozinho */
+.hero-badge .truck-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Título Geral */
 .hero-title {
-  font-size: var(--text-heading-lg);
-  line-height: var(--leading-heading-lg);
+  font-size: clamp(32px, 4.5vw, 56px);
+  line-height: 1.15;
   letter-spacing: var(--tracking-heading-lg);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-ink);
   margin-bottom: var(--spacing-24);
+}
+
+/* CORES PERSONALIZADAS DOS TÍTULOS */
+.title-blue {
+  color: #063B7A; /* Azul Marinho solicitado */
+  display: block;
+}
+
+.title-orange {
+  color: #F4511E; /* Laranja solicitado */
+  display: block;
 }
 
 .hero-description {
-  font-size: var(--text-body);
+  font-size: 18px;
   color: var(--color-graphite);
   margin-bottom: var(--spacing-32);
-  max-width: 480px;
-  line-height: var(--leading-body);
+  max-width: 520px;
+  line-height: 1.6;
 }
 
 .hero-trust {
@@ -350,11 +390,35 @@ img {
   font-weight: var(--font-weight-regular);
 }
 
-.hero-image img {
+.hero-image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+}
+
+/* Imagem Principal com efeito Fade/Degradê na borda esquerda */
+.hero-main-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
   border-radius: var(--radius-cards);
   object-fit: cover;
+  
+  /* Efeito de fade transparente na lateral esquerda que some em direção ao fundo branco */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%);
 }
+
+/* --- RESPONSIVIDADE DESKTOP --- */
+@media (min-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--spacing-72);
+  }
+}
+
+
 
 /* ===== PRODUCTS SECTION ===== */
 .produtos {
@@ -1278,4 +1342,125 @@ img {
   .cta-final {
     padding: var(--spacing-48) var(--spacing-16);
   }
+}
+/* ===== SEÇÃO COMO FUNCIONA (ESTRUTURA LADO A LADO E TIPOGRAFIA MAX) ===== */
+.how-it-works {
+  background-color: var(--color-abyss); 
+  padding: var(--spacing-160) 0; /* Aumentado o respiro da seção */
+}
+
+.how-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-48);
+  align-items: center;
+}
+
+.how-text-block {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.how-text-block .eyebrow {
+  font-size: var(--text-body-sm);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #25D366; /* Usando o verde do zap para quebrar o padrão sutilmente */
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-24);
+}
+
+.how-text-block h2 {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.15;
+  color: var(--color-paper); /* Mantém o resto branco */
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-24);
+  letter-spacing: -0.02em;
+}
+
+/* NOVA REGRA: Pinta a primeira linha com o seu laranja específico */
+.how-text-block h2 .orange-text {
+  color: #f09d23;
+  display: block; /* Garante que fique na linha de cima */
+}
+
+.how-text-block h2 span:not(.orange-text) {
+  color: var(--color-steel); /* Cor cinza sutil para a segunda linha */
+  display: block;
+}
+
+
+/* PARÁGRAFO AMPLIADO */
+.how-text-block p {
+  font-size: 18px; /* Aumentado de 16px para 18px */
+  color: #b9bbc6; 
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+/* Caixa da Imagem */
+.how-image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.how-img {
+  width: 100%;
+  max-width: 440px; /* Aumentado o limite da imagem */
+  height: auto;
+  border-radius: var(--radius-cards);
+  object-fit: contain;
+  /* Animação flutuante sutil para chamar atenção para a foto promocional */
+  animation: floatEffect 4s ease-in-out infinite; 
+}
+
+/* Animação da Imagem */
+@keyframes floatEffect {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* BOTÃO DE CONVERSÃO AGRESSIVA (CTA FORTE) */
+.btn-whatsapp-section {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #25D366;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px; /* Texto maior e imponente */
+  font-weight: var(--font-weight-semibold);
+  padding: 18px 36px; /* Botão mais robusto */
+  border-radius: 50px;
+  margin-top: var(--spacing-32);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-whatsapp-section .w-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-whatsapp-section:hover {
+  background-color: #20ba5a;
+  transform: scale(1.05) translateY(-3px); /* Leve efeito de crescimento (pop) */
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* --- DESIGN DESKTOP --- */
+@media (min-width: 1024px) {
+  .how-container {
+    grid-template-columns: 1.3fr 0.7fr; /* Dá mais espaço para o textão se espalhar */
+    gap: var(--spacing-80);
+  }
+}
+.header-container .btn-product {
+  align-self: center;
+  margin-top: 5px;
 }

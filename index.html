@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gás Já | Entrega de Botijões</title>
-    <meta name="description" content="Peça seu botijão de gás pelo WhatsApp e receba em casa. Entrega rápida na sua região. Atendimento 24h.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Gás Já | Entrega de Botijões">
@@ -32,53 +30,84 @@
 <body>
     <!-- ===== HEADER ===== -->
     <header class="header" role="banner">
-        <div class="header-container">
-            <div class="header-brand">
-                <a href="#" class="logo">Gás Já</a>
-            </div>
-            
-            <nav class="header-nav" role="navigation" aria-label="Navegação principal">
-                <a href="#produtos" class="nav-link">Botijões</a>
-                <a href="#como-funciona" class="nav-link">Como funciona</a>
-                <a href="#sobre" class="nav-link">Sobre</a>
-                <a href="#contato" class="nav-link">Contato</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-            </nav>
+    <div class="header-container">
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <img src="./LOGO DESKTOP.svg" alt="Gás Já" class="logo-img">
+        </a>
+        
+        <!-- Menu de Navegação -->
+        <nav class="header-nav" id="headerNav" role="navigation">
+            <a href="#botijões" class="nav-link">Botijões</a>
+            <a href="#como-funciona" class="nav-link">Como funciona</a>
+            <a href="#sobre" class="nav-link">Sobre</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+        </nav>
 
-            <button class="btn btn-primary btn-header" id="btnCtaHeader" aria-label="Pedir gás pelo WhatsApp">
-                Pedir agora
-            </button>
+        <!-- Botão de Ação -->
+        <a href="https://wa.me/5549999580453"
+                         class="btn btn-primary btn-product"
+                         target="_blank" 
+                         rel="noopener">
+                         Pedir Agora
+                        </a>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
+        <!-- Botão Hamburguer (Os 3 risquinhos) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
 
     <!-- ===== HERO ===== -->
-    <section class="hero" id="inicio">
-        <div class="hero-container">
-            <div class="hero-content">
-                <p class="hero-label">ENTREGA RÁPIDA</p>
-                <h1 class="hero-title">Ficou sem gás?<br>Peça agora e receba em casa.</h1>
-                <p class="hero-description">
-                    Botijões de gás entregues rapidamente na sua região. Pedido simples pelo WhatsApp, sem complicações.
-                </p>
-                <button class="btn btn-primary btn-large" id="btnHeroPrimary">
-                    Pedir meu botijão agora
-                </button>
-                <p class="hero-trust">Atendimento rápido • Entrega segura • Pedido fácil</p>
+<section class="hero" id="inicio">
+    <div class="hero-container">
+        <!-- Coluna de Conteúdo (Esquerda) -->
+        <div class="hero-content">
+            <!-- Rótulo superior transformado em pílula laranja com ícone -->
+            <div class="hero-badge">
+                <svg class="truck-icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                ENTREGA RÁPIDA • GÁS E ÁGUA
             </div>
-            <div class="hero-image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCQG5wG2-C1N2BcRoOw3kUbLjrraRlEKDdumuDAt3SoQ&s=10" alt="Entrega de botijão de gás" loading="lazy">
-            </div>
+
+            <!-- Título com cores personalizadas -->
+            <h1 class="hero-title">
+                <span class="title-blue">Seu gás acabou?</span>
+                <span class="title-orange">A Lazzarin entrega até você.</span>
+            </h1>
+
+            <p class="hero-description">
+                Peça seu botijão de gás ou água de forma rápida e prática. Entre em contato pelo WhatsApp e receba no conforto da sua casa.
+            </p>
+
+            <a href="https://wa.me."
+               class="btn btn-primary btn-large"
+               target="_blank" 
+               rel="noopener noreferrer">
+               Pedir botijão pelo WhatsApp
+            </a>
+
+            <p class="hero-trust">Atendimento rápido • Entrega segura • Pedido fácil</p>
         </div>
-    </section>
+        
+        <!-- Coluna da Imagem Principal (Direita) -->
+        <div class="hero-image-box">
+            <img src="./FOTOCAPA.svg" alt="Entrega rápida Lazzarin Gás e Água" class="hero-main-img">
+        </div>
+    </div>
+</section>
+
+
 
     <!-- ===== PRODUTOS ===== -->
-    <section class="produtos" id="produtos">
+    <section class="botijões" id="botijões">
         <div class="container">
             <div class="section-header">
                 <h2>Qual botijão você precisa?</h2>
@@ -93,12 +122,15 @@
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1xEam-lUiHPCw7xZdYRh8swMGJ-J9qJpvD9QwNbvFEg&s=10" alt="Botijão P13 - 13kg" loading="lazy">
                     </div>
                     <div class="product-body">
-                        <h3 class="product-name">P13</h3>
+                        <h3 class="product-name">P13 R$135,00</h3>
                         <p class="product-spec">13 kg • Residencial</p>
                         <p class="product-desc">Ideal para cozinhas residenciais. A opção mais popular para uso doméstico.</p>
-                        <button class="btn btn-primary btn-product" data-produto="P13">
-                            Pedir P13
-                        </button>
+                        <a href="https://wa.me/5549999580453"
+                         class="btn btn-primary btn-product"
+                         target="_blank"
+                         rel="noopener">
+                         Pedir pelo WhatsApp
+                        </a>
                     </div>
                 </div>
 
@@ -108,12 +140,51 @@
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsG5B1BZYBooXe6LDO_V1dzuPei4_N7_mV6lxtxpkujg&s=10" alt="Botijão P20 - 20kg" loading="lazy">
                     </div>
                     <div class="product-body">
-                        <h3 class="product-name">P20</h3>
+                        <h3 class="product-name">P20 R$220,00</h3>
                         <p class="product-spec">20 kg • Comercial</p>
                         <p class="product-desc">Perfeito para pequenos comércios e uso em estabelecimentos.</p>
-                        <button class="btn btn-secondary btn-product" data-produto="P20">
-                            Consultar P20
-                        </button>
+                        <a href="https://wa.me/5549999580453"
+                         class="btn btn-primary btn-product"
+                         target="_blank" 
+                         rel="noopener">
+                         Pedir pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto P8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnGBlg8SQpw2oze7-Vve1r3Ru2dwoVVqjROketX_hQzg&s=10" alt="Botijão P20 - 20kg" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">P20 R$115,00</h3>
+                        <p class="product-spec">8 kg • popular</p>
+                        <p class="product-desc">Perfeito para apartamentos.</p>
+                        <a href="https://wa.me/5549999580453"
+                         class="btn btn-primary btn-product"
+                         target="_blank" 
+                         rel="noopener">
+                         Pedir pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto P5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWsSWjrbVIdDaO6TIQrB-KnXuR8OiFAWuSzCGGmhxqzA&s=10" alt="Botijão P20 - 20kg" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">P5 R$90,00</h3>
+                        <p class="product-spec">5 kg • popular</p>
+                        <p class="product-desc">Perfeito para quem cozinha pouco.</p>
+                        <a href="https://wa.me/5549999580453"
+                         class="btn btn-primary btn-product"
+                         target="_blank" 
+                         rel="noopener">
+                         Pedir pelo WhatsApp
+                        </a>
                     </div>
                 </div>
 
@@ -123,42 +194,16 @@
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqytGU4e2XdGzcqc-WkCxeFbLL1byN4Bj615U6bLrF7Q&s=10" alt="Botijão P45 - 45kg" loading="lazy">
                     </div>
                     <div class="product-body">
-                        <h3 class="product-name">P45</h3>
+                        <h3 class="product-name">P45 R$495,00</h3>
                         <p class="product-spec">45 kg • Industrial</p>
                         <p class="product-desc">Para operações de maior escala e alta demanda.</p>
-                        <button class="btn btn-secondary btn-product" data-produto="P45">
-                            Consultar P45
-                        </button>
+                        <a href="https://wa.me/5549999580453"
+                         class="btn btn-primary btn-product"
+                         target="_blank" 
+                         rel="noopener">
+                         Pedir pelo WhatsApp
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== BENEFÍCIOS ===== -->
-    <section class="beneficios">
-        <div class="container">
-            <h2 class="sr-only">Por que comprar conosco</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">⚡</div>
-                    <h3>Entrega Rápida</h3>
-                    <p>Receba seu botijão no mesmo dia em muitas regiões.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🚚</div>
-                    <h3>Até Sua Casa</h3>
-                    <p>Entrega direto na sua porta, sem sair de casa.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <h3>Segurança</h3>
-                    <p>Botijões certificados e dentro de todas as normas.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">📱</div>
-                    <h3>Pedido Fácil</h3>
-                    <p>Pedir é simples: apenas um WhatsApp.</p>
                 </div>
             </div>
         </div>
@@ -201,7 +246,7 @@
     <!-- ===== SOBRE ===== -->
     <section class="sobre" id="sobre">
         <div class="container">
-            <h2>Sobre a Gás Já</h2>
+            <h2>Sobre Lazzarin gás e água</h2>
             <p class="sobre-text">
                 Somos especialistas em entrega de botijões de gás. Oferecemos praticidade, segurança e atendimento rápido para sua casa ou estabelecimento.
             </p>
@@ -215,7 +260,7 @@
                     <span>Área de entrega</span>
                 </div>
                 <div class="stat">
-                    <strong>24h</strong>
+                    <strong>07:30h às 22:00h</strong>
                     <span>Disponível para contato</span>
                 </div>
             </div>
@@ -231,113 +276,64 @@
                 <div class="location-info">
                     <div class="info-block">
                         <strong>Endereço</strong>
-                        <p id="companyAddress">[ Colocar endereço ]</p>
+                        <p id="companyAddress">[ Rua Prefeito Segundo Dala Costa, 498 - Concórdia, SC ]</p>
                     </div>
                     <div class="info-block">
                         <strong>Telefone</strong>
-                        <p id="companyPhone">[ Colocar telefone ]</p>
+                        <p id="companyPhone">[ (49) 99958-0453 ]</p>
                     </div>
                     <div class="info-block">
                         <strong>Horário de atendimento</strong>
-                        <p id="companyHours">[ Colocar horário ]</p>
+                        <p id="companyHours">[ Seg-Dom: 07:30h às 22:00h ]</p>
                     </div>
                 </div>
 
-                <div class="location-map">
+                <div class="location-map"> 
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.0726896825937!2d-46.65438!3d-23.5505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAxLjgiUyA0NsKwMzknMDEuNyJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-                        class="map-frame"
-                        title="Localização da empresa"
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3547.2642491795255!2d-52.02939759094276!3d-27.24224057635403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e37f5e829c0001%3A0xfc066098c9126d6f!2zTGF6emFyaW4gR8OhcyBFIMOBZ3Vh!5e0!3m2!1spt-BR!2sbr!4v1788979970665!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-60085ea8-10e6-4a0a-ba5e-fde9f5bd32c0" data-elfsight-app-lazy></div>
+
     <!-- ===== CONTATO ===== -->
-    <section class="how-it-works" id="como-funciona">
-  <div class="container">
-
-    <div class="section-heading">
-      <span class="eyebrow">COMO FUNCIONA</span>
-
+    <section class="how-it-works" id="contato">
+  <div class="container how-container">
+    
+    <!-- Coluna de Texto (Lado Esquerdo) - Foco em SEO e Autoridade -->
+    <div class="how-text-block">
+      <span class="eyebrow">🚀 DISK GÁS RÁPIDO</span>
       <h2>
-        Pedir é simples.<br>
-        <span>Do jeito que tem que ser.</span>
-      </h2>
-
+  <!-- Adicionamos a classe orange-text aqui -->
+  <span class="orange-text">Pedir seu Gás de Cozinha</span>
+  <span>nunca foi tão simples e rápido.</span>
+</h2>
       <p>
-        Você chama pelo WhatsApp, confirma o pedido e recebe seu botijão em casa.
+        Não fique na mão no meio da receita! Nosso sistema automatizado via WhatsApp despacha o entregador mais próximo da sua casa em minutos. Sem ligações demoradas, sem burocracia.
       </p>
+      
+      <!-- CTA Criativo e Forte -->
+      <a href="https://wa.me/5549999580453" class="btn-whatsapp-section" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="currentColor" class="w-icon">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.298 1.448 5.355 1.449 5.428 0 9.845-4.413 9.848-9.84.002-2.63-1.023-5.101-2.885-6.965C17.043 1.936 14.56 1.91 12.016 1.91c-5.433 0-9.851 4.415-9.854 9.84-.001 2.13.56 4.21 1.626 5.979l-.997 3.638 3.73-.978zm11.45-6.732c-.066-.109-.242-.175-.505-.307-.264-.132-1.558-.769-1.799-.856-.242-.088-.417-.132-.593.132-.176.264-.681.856-.834 1.03-.154.174-.307.197-.572.065-.263-.132-1.115-.411-2.122-1.31-.783-.699-1.312-1.562-1.465-1.826-.154-.264-.016-.407.116-.539.118-.118.264-.308.395-.461.132-.154.176-.264.264-.44.088-.175.044-.33-.022-.462-.066-.132-.593-1.427-.813-1.954-.214-.515-.43-.444-.592-.452-.154-.007-.33-.01-.505-.01-.176 0-.462.066-.704.33-.242.264-.923.901-.923 2.197 0 1.296.945 2.548 1.077 2.724.132.175 1.86 2.84 4.505 3.982.63.27 1.12.433 1.503.554.633.201 1.208.173 1.662.105.507-.076 1.558-.637 1.778-1.252.221-.615.221-1.143.154-1.253z"/>
+        </svg>
+        Pedir Gás Pelo WhatsApp →
+      </a>
     </div>
 
-    <div class="steps-wrapper">
-
-      <!-- IMAGEM -->
-      <div class="steps-image">
-        <img
-          src="https://i.postimg.cc/vmMQ12sm/Whats.png"
-          alt="Pedido de botijão de gás pelo WhatsApp"
-          loading="lazy"
-        >
-      </div>
-
-      <!-- PASSOS -->
-      <div class="steps-content">
-
-        <article class="step">
-          <div class="step-number">01</div>
-
-          <div class="step-info">
-            <h3>Chame pelo WhatsApp</h3>
-            <p>
-              Mande uma mensagem e fale com nossa equipe para fazer seu pedido.
-            </p>
-          </div>
-        </article>
-
-        <article class="step">
-          <div class="step-number">02</div>
-
-          <div class="step-info">
-            <h3>Informe o que precisa</h3>
-            <p>
-              Diga o tipo de botijão, seu endereço e a quantidade que deseja.
-            </p>
-          </div>
-        </article>
-
-        <article class="step">
-          <div class="step-number">03</div>
-
-          <div class="step-info">
-            <h3>Receba em casa</h3>
-            <p>
-              Confirmamos o pedido e enviamos seu gás direto para sua porta.
-            </p>
-          </div>
-        </article>
-
-        <!-- CTA -->
-        <a
-          href="#"
-          class="whatsapp-button"
-          id="whatsappButton"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="whatsapp-icon">⌕</span>
-          Pedir meu gás pelo WhatsApp
-          <span class="arrow">→</span>
-        </a>
-
-      </div>
-
+    <!-- Coluna da Imagem (Lado Direito) -->
+    <div class="how-image-box">
+      <img src="./FOTOWHATS.svg" alt="Peça seu botijão de gás pelo WhatsApp com segurança" class="how-img" loading="lazy">
     </div>
+
   </div>
 </section>
+
 
     <!-- ===== FAQ ===== -->
     <section class="faq" id="faq">
@@ -423,9 +419,13 @@
         <div class="container">
             <h2>Seu gás acabou?</h2>
             <p>Não perca tempo. Peça agora e receba em casa.</p>
-            <button class="btn btn-primary btn-large" id="btnCtaFinal">
-                Pedir meu gás agora
-            </button>
+            <a 
+    href="https://wa.me/5549999580453"
+    class="btn btn-primary btn-large"
+    target="_blank"
+>
+    Pedir meu gás agora
+</a>
         </div>
     </section>
 
@@ -447,15 +447,24 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contato</h4>
-                    <p id="footerPhone">📞 [ Telefone ]</p>
-                    <p id="footerWhatsapp">💬 [ WhatsApp ]</p>
-                </div>
+    <h4>Contato</h4>
+
+    <p id="footerPhone">
+        📞 <a href="tel:+5549999580453">(49)99958-0453</a>
+    </p>
+
+    <p id="footerWhatsapp">
+        💬 <a 
+            href="https://wa.me/(49)99958-0453?text=Olá!%20Quero%20pedir%20um%20botijão%20de%20gás."
+            target="_blank"
+        >(49)99958-0453</a>
+    </p>
+</div>
                 <div class="footer-col">
                     <h4>Redes sociais</h4>
                     <ul>
-                        <li><a href="#" target="_blank">Instagram</a></li>
-                        <li><a href="#" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/lazzarin_gas?stkn=MWtkczc1eG04MDJrcA==" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/share/1JJzeTwNe7/?mibextid=wwXIfr" target="_blank">Facebook</a></li>
                     </ul>
                 </div>
             </div>
@@ -467,9 +476,7 @@
     </footer>
 
     <!-- ===== WHATSAPP FLOAT ===== -->
-    <a href="#" class="whatsapp-float" id="whatsappFloat" title="Abrir WhatsApp" aria-label="Conversar no WhatsApp">
-        💬
-    </a>
+   
 
     <!-- ===== MOBILE CTA BAR ===== -->
     <div class="mobile-cta-bar" id="mobileCtaBar">

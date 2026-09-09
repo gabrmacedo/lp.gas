@@ -5,15 +5,15 @@
 
 // Configuration object - easy to customize
 const CONFIG = {
-    whatsappNumber: '5511999999999', // Replace with actual WhatsApp number
-    telefone: '(11) 9999-9999',
-    endereco: 'Rua Exemplo, 123 - São Paulo, SP',
-    horarioAtendimento: 'Seg-Dom: 8h às 20h',
-    anosAtividade: '5+ anos',
-    areaAtendimento: 'Zona Sul de São Paulo',
-    regiaoDeEntrega: 'Zona Sul, Zona Oeste e Centro',
-    instagramLink: 'https://instagram.com/gasja',
-    facebookLink: 'https://facebook.com/gasja'
+    whatsappNumber: '554999958-0453', // Replace with actual WhatsApp number
+    telefone: '(49)99958-0453',
+    endereco: 'Rua Prefeito Segundo Dala Costa, 498 - Concórdia, SC',
+    horarioAtendimento: 'Seg-Dom: 07:30h às 22:00h',
+    anosAtividade: '20+ anos',
+    areaAtendimento: 'Concórdia, SC',
+    regiaoDeEntrega: 'Concórdia, SC',
+    instagramLink: 'https://www.instagram.com/lazzarin_gas?stkn=MWtkczc1eG04MDJrcA==',
+    facebookLink: 'https://www.facebook.com/share/1JJzeTwNe7/?mibextid=wwXIfr'
 };
 
 // ===== Initialize on DOM Load =====
@@ -131,15 +131,6 @@ function initAllButtons() {
         btnHeroPrimary.addEventListener('click', () => openWhatsApp());
     }
 
-    // Product buttons
-    const productButtons = document.querySelectorAll('.btn-product');
-    productButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const produto = e.target.getAttribute('data-produto');
-            const mensagem = `Olá! Gostaria de fazer um pedido de botijão ${produto}. Poderia me informar o valor, disponibilidade e prazo de entrega?`;
-            openWhatsApp(mensagem);
-        });
-    });
 
     // Contact buttons
     const btnContactWhatsapp = document.getElementById('btnContactWhatsapp');
@@ -208,3 +199,24 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const headerNav = document.getElementById('headerNav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Escuta o clique nos 3 risquinhos
+    menuToggle.addEventListener('click', () => {
+        // Liga/Desliga a animação dos riscos virarem um "X"
+        menuToggle.classList.toggle('active');
+        // Liga/Desliga a aparição do menu na tela
+        headerNav.classList.toggle('active');
+    });
+
+    // Se o usuário clicar em uma opção (ex: "Sobre"), o menu fecha sozinho
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            headerNav.classList.remove('active');
+        });
+    });
+});
