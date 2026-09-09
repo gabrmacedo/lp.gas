@@ -726,14 +726,15 @@ img {
 .location-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-72);
+  gap: var(--spacing-48);
   max-width: var(--page-max-width);
   margin: 0 auto;
+  align-items: center;
 }
 
 @media (min-width: 1024px) {
   .location-content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Texto na esquerda, mapa na direita no computador */
   }
 }
 
@@ -755,12 +756,42 @@ img {
   color: var(--color-graphite);
 }
 
-.map-frame {
+/* CAIXA DO MAPA CORRIGIDA E ANTI-SAMBA */
+.location-map {
   width: 100%;
-  height: 400px;
-  border: 1px solid var(--color-mist);
-  border-radius: var(--radius-cards);
+  max-width: 100%;
+  position: relative;
 }
+
+/* Efeito responsivo elástico no celular para não quebrar a tela */
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 65%; /* Altura proporcional ideal para telas de celular */
+  position: relative;
+  height: 0;
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius-cards);
+  border: 1px solid var(--color-mist);
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border: 0;
+}
+
+/* NO COMPUTADOR: Remove o comportamento elástico e fixa a altura perfeita de volta */
+@media (min-width: 1024px) {
+  .map-responsive {
+    padding-bottom: 0;
+    height: 450px; /* Altura clássica e imponente para desktops */
+  }
+}
+
 
 /* =========================================
    COMO FUNCIONA
