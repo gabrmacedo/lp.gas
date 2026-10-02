@@ -148,24 +148,24 @@ img {
 /* ===== HEADER ===== */
 .header {
   position: sticky;
-  position: -webkit-sticky;
   top: 0;
   z-index: 999;
   background-color: var(--color-paper);
   border-bottom: 1px solid var(--color-mist);
   font-weight: var(--font-weight-medium);
   width: 100%;
-  height: 90px; /* Travamos a altura do cabeçalho para ele não esticar */
+  height: 90px;
 }
 
 .header-container {
   max-width: var(--page-max-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-16); /* Removemos o padding vertical para não esticar */
-  height: 100%; /* O contêiner puxa a altura de 90px do header */
+  padding: 0 var(--spacing-16);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo {
@@ -173,50 +173,26 @@ img {
   align-items: center;
   text-decoration: none;
   height: 100%;
+  width: 150px;
 }
 
-/* Controla o tamanho do SVG sem deixar ele estufar o cabeçalho */
-.logo img {
-  height: 200px;        /* Mantém o desenho grande e visível */
+.logo-img {
+  height: 200px;
   width: auto;
-  margin-top: -50px;      /* Centraliza verticalmente o desenho interno */
-  display: block;
-  object-fit: contain;
-}
-
-.header-nav {
-  display: none; /* Mantém oculto por padrão (mobile) e ativa no media query abaixo */
-  gap: var(--spacing-24);
-  justify-content: center; /* Centraliza os links perfeitamente no meio da tela */
-  align-items: center;
-  border: none;            /* Garante que não há bordas no menu */
-}
-
-
-.header-nav {
-  display: none;
-  gap: var(--spacing-24);
-}
-
-@media (min-width: 768px) {
-  .header-nav {
-    display: flex;
-    flex: 1;
-    align-items: center;
-  }
-}
-
-.header-nav.active {
-  display: flex;
-  flex-direction: column;
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: var(--color-paper);
-  padding: var(--spacing-16);
-  gap: var(--spacing-16);
-  border-bottom: 1px solid var(--color-mist);
+  top: -55px;
+  left: var(--spacing-16);
+  object-fit: contain;
+  z-index: 1000;
+}
+
+/* Menu: DESKTOP (padrão) */
+.header-nav {
+  display: flex;
+  flex: 1;
+  gap: var(--spacing-24);
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-link {
@@ -226,17 +202,16 @@ img {
   font-weight: var(--font-weight-regular);
   transition: color 0.2s ease;
 }
+.nav-link:hover { color: var(--color-ember); }
 
-.nav-link:hover {
-  color: var(--color-ember);
+.header-container .btn-product {
+  align-self: center;
+  margin-top: 5px;
 }
 
-.btn-header {
-  justify-self: end;
-}
-
+/* Hamburguer: escondido no DESKTOP */
 .menu-toggle {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 6px;
   background: none;
@@ -245,18 +220,41 @@ img {
   padding: var(--spacing-8);
 }
 
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
-}
-
 .menu-toggle span {
   width: 24px;
   height: 2px;
   background-color: var(--color-ink);
   border-radius: 1px;
   transition: all 0.3s ease;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 767px) {
+  .header-nav {
+    display: none;            /* esconde o menu horizontal */
+  }
+
+  .header-nav.active {        /* abre quando clicar no hamburguer */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-paper);
+    padding: var(--spacing-24);
+    gap: var(--spacing-16);
+    border-bottom: 1px solid var(--color-mist);
+    z-index: 998;
+  }
+
+  .header .btn-product {
+    display: none;            /* esconde "Pedir Agora" no topo */
+  }
+
+  .menu-toggle {
+    display: flex;            /* mostra o hamburguer só aqui */
+  }
 }
 
 /* ===== BUTTONS ===== */
@@ -1494,4 +1492,16 @@ img {
 .header-container .btn-product {
   align-self: center;
   margin-top: 5px;
+}
+/* ===== RODAPÉ ===== */
+.footer .logo-img,
+footer .logo-img {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  height: 200px !important;   /* 250px é muito grande, principalmente no celular */
+  width: auto !important;
+  margin: 0 0 20px 0;
+  object-fit: contain;
+  z-index: auto !important;
 }

@@ -220,3 +220,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+    const menuToggle = document.getElementById('menuToggle');
+    const headerNav = document.getElementById('headerNav');
+
+    menuToggle.addEventListener('click', () => {
+        headerNav.classList.toggle('active');
+    });
+
+    // Fecha o menu automaticamente ao clicar em qualquer link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            headerNav.classList.remove('active');
+        });
+    });
